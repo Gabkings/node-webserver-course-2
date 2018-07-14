@@ -49,6 +49,13 @@ app2.get('/bad', (req,res) => {
 	res.send({result:"no such route"})
 }) 
 
+app2.get('/projects', (req,res) => {
+	res.render("projects.hbs",{
+		pageTitle: "Projects page.",
+		coderWeb:"Projects page"
+	})
+})
+
 app2.listen(port ,() =>{
 	console.log(`the app is listening on port ${port}`);
 });
