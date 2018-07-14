@@ -1,7 +1,7 @@
 const app = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
-
+const port = process.env.PORT || 3000;
 
 
 
@@ -49,6 +49,8 @@ app2.get('/bad', (req,res) => {
 	res.send({result:"no such route"})
 }) 
 
-app2.listen(3000);
+app2.listen(port ,() =>{
+	console.log(`the app is listening on port ${port}`);
+});
 
 console.log("the app is running on the port 3000");
